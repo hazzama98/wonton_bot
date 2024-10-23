@@ -150,6 +150,7 @@ class Wonton:
             res = self.make_request('post',url, headers, data={})
             if res is not None:
                 data = res.json()
+                data['bonusRound'] = True  # Set bonus round to always True
                 self.print_('Start the game successfully')
                 return data
         except Exception as error:
