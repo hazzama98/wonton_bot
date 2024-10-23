@@ -9,9 +9,6 @@ import requests
 from datetime import datetime, timedelta
 import string
 
-def colored(r, g, b, text):
-    return f"\033[38;2;{r};{g};{b}m{text}\033[39m"
-
 class Wonton:
 
     def __init__(self, proxy_config):
@@ -37,7 +34,7 @@ class Wonton:
             self.proxies = {}
 
     def print_(self, word):
-        print(colored(158, 158, 255, f"[⚔] | {word}"))
+        print(f"[⚔] | {word}")
 
     def make_request(self, method, url, headers, json=None, data=None):
         retry_count = 0
@@ -361,7 +358,7 @@ class Wonton:
             return {}
 
 def print_(word):
-    print(colored(255, 105, 180, f"[⚔] | {word}"))
+    print(f"[⚔] | {word}")
 
 def gets(id):
     try:
